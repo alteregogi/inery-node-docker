@@ -6,6 +6,9 @@ This docker to make sure that user have same environment for their node, and eve
 
 ### Usage
 
+create docker-compose.yml
+you can check my repositories how to install this docker, [inery-task-docker](https://github.com/alteregogi/inery-task-docker/blob/master/readme-en.md)
+
 ```yaml
 version: '3.9'
 services:
@@ -70,5 +73,11 @@ or to run ine.py
 
 ```shell
 docker exec -it inery-node sh -c "cd ./inery-node/inery.setup/; ./ine.py --help"
+```
+
+or you can just bash inside docker
+
+```shell
+docker exec -it inery-node bash
 ```
 
