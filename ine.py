@@ -44,7 +44,7 @@ def master(master) :
     for file in FILES:
         with open(file, "a") as fs:
 
-            fs.write("\n--producer-name {0} \\\n".format(master["NAME"]))
+            fs.write("\n--master-name {0} \\\n".format(master["NAME"]))
             fs.write("--http-server-address {0} \\\n".format(master["HTTP_ADDRESS"]))
             fs.write("--p2p-listen-endpoint 0.0.0.0:9010 \\\n")
             # fs.write("--p2p-listen-endpoint {0} \\\n".format(master["PEER_ADDRESS"]))
