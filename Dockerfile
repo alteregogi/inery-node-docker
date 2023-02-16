@@ -16,7 +16,7 @@ ENV PATH "${PATH}:/root/inery-node/inery/bin/:/root/inery-automation/"
 
 RUN apt-get update -y \
     && apt-get upgrade -y \
-    && apt-get install -y make bzip2 libbz2-dev libssl-dev libgmp3-dev \
+    && apt-get install -y make sudo bzip2 libbz2-dev libssl-dev libgmp3-dev \
     libicu-dev python3 \
     libtool curl zlib1g-dev \
     libcurl4-gnutls-dev llvm-7-dev clang-7 vim-common jq libncurses5 git python3-pip
