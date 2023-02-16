@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:focal
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/London
@@ -14,11 +14,12 @@ ENV INERY_PRIVATE_KEY $INERY_PRIVATE_KEY
 ENV NODE_IP_ADDRESS $NODE_IP_ADDRESS
 ENV PATH "${PATH}:/root/inery-node/inery/bin/:/root/inery-automation/"
 
-RUN apt-get update && apt-get upgrade \
-    && apt-get install -y make \
-    python3 \
-    autoconf libtool curl zlib1g-dev \
-    libcurl4-gnutls-dev llvm-7-dev clang-7 git python3-pip
+RUN apt-get update -y \
+    && apt-get upgrade -y \
+    && apt-get install -y make bzip2 libbz2-dev libssl-dev libgmp3-dev \
+    libicu-dev python3 \
+    libtool curl zlib1g-dev \
+    libcurl4-gnutls-dev llvm-7-dev clang-7 vim-common jq libncurses5 git python3-pip
 
 VOLUME /inery-node
 WORKDIR /root
